@@ -1,7 +1,13 @@
+import { useEffect, useRef } from "react";
 
 const useCanvas = () => {
+
+    const refCanvas = useRef(null);
+    const ctxRef = useRef(null);
+
     useEffect(() => {
         const canvas = refCanvas.current;
+        const demension = 500;
         canvas.width = demension;
         canvas.height = demension;
         canvas.style.width = '${demension}px';
@@ -11,4 +17,6 @@ const useCanvas = () => {
         ctxRef.current = ctx;
 
     }, [])
+    return {refCanvas, ctxRef}
 }
+export default useCanvas;

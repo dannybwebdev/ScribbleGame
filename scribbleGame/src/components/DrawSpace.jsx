@@ -1,13 +1,16 @@
 import { useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import useCanvas from './Context';
 
 function DrawSpace({ color, size}){
-    const refCanvas = useRef(null);
-    const ctxRef = useRef(null);
+    //const refCanvas = useRef(null);
+    //const ctxRef = useRef(null);
     const [isDrawing, setIsDrawing] = useState(false)
+    const { refCanvas, ctxRef } = useCanvas()
 
-    let demension = 500;
+
+    /*let demension = 500;
 
     useEffect(() => {
         const canvas = refCanvas.current;
@@ -19,7 +22,7 @@ function DrawSpace({ color, size}){
         const ctx = canvas.getContext("2d");
         ctxRef.current = ctx;
 
-    }, [])
+    }, [])*/
 
     useEffect(() =>{
         const canvas = refCanvas.current;
